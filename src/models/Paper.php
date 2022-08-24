@@ -7,7 +7,7 @@ class Paper extends Figure {
 
     public function __construct()
     {
-        $this->type="Paper";
+        $this->type= "Paper";
     }
 
 }

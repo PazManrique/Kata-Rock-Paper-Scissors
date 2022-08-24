@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Models\Paper;
 use App\Models\Player;
 use App\Models\Rock;
 use App\Models\Scissors;
@@ -10,26 +11,38 @@ use PHPUnit\Framework\TestCase;
 class PlayerTest extends TestCase
 {
     /** @test */
-    public function test_player_chose_rock()
+    public function test_player_choose_rock()
     {
         $player = new Player;
         $rock = new Rock;
         
-        $player->chose("Rock");
+        $player->choose("Rock");
 
         $this->assertEquals($rock, $player->getFigure());
     }
 
     /** @test */
-    public function test_player_chose_scissors()
+    public function test_player_choose_scissors()
     {
         $player = new Player;
         $scissors = new Scissors;
 
-        $player->chose("Scissors");
+        $player->choose("Scissors");
 
         $this->assertEquals($scissors, $player->getFigure());
     }
+
+    /** @test */
+    public function test_player_choose_Paper()
+    {
+       $player = new Player;
+       $paper = new Paper;
+
+       $player->choose("Paper");
+
+       $this->assertEquals($paper, $player->getFigure());
+    }
+    
     
 
 
